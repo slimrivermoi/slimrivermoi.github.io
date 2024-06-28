@@ -10796,3 +10796,12 @@ header.masthead .post-heading .meta a {
     font-size: 2.25rem;
   }
 }
+
+pre code {
+  background-color: black;
+  color: green;
+  font-size: small;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+}

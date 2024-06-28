@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Code & Crochet Blog</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Code & Crochet</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="https://www.instagram.com/catbuchner?igsh=Z2lzcGN2d2J0MXBp">Crochet</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/post02-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Treasure Island Game</h1>
+                            <h2 class="subheading">A simple way to illustrate If-Else logic in Python</h2>
+                            <span class="meta">
+                                Posted by Coder Cat with ❤️
+                                on Jun 28, 2024
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Looking back at my earliest Python coding lessons, understanding if-else logic is perhaps one of the most important foundation one should learn.</p>
+                        
+                        <p>Let's say we are building a <b>Treasure Island Game</b> where the player has to go through a series of challenges to find the treasure. Life is full of choices, and this game is no exception! In our game, you will be asked to make choices and when the wrong one is chosen, your game is over.</p>
+                            <p>To start, let's draw our game logic:                        </p>
+                        <a href="#!"><img class="img-fluid" src="assets/img/240628_treasure_island_flowchart (no code).drawio.png" alt="..." /></a>
+                        
+                        <p><b>Step 1: draw a flowchart</b></p>
+                        <p>Drawing a flowchart can be really helpful before you start coding. There are many drawing tools out there, I personally like the <a href="http://draw.io">draw.io</a> for this purpose.</p>
+                        <p>As you can see in the chart above, we are creating 3 challenges (or choices) for the player to decide. Every step along the way, if the player chooses the wrong option, the game will be over. Based on the logic above, we will be building a "nested if" statements in our code, starting from Choice1, then Choice2 and Choice3.</p>
+                        
+                        <p><b>Step 2: code the "if-else" for Choice 1, then for Choice 2 and Choice 3.</b></p>
+                        In Choice 1, if player selected "left" they get to continue with the game. The game will be over if they choose otherwise. 
+                        <br><br>Here is the final code: 
+<pre><code>
+print("Welcome to Treasure Island.🏴‍☠️")
+print("Your mission is to find the treasure.")
+
+choice1 = input('Where do you want to go? Type "left" or "right" \n').lower()
+
+if choice1 == "left":
+  choice2 = input('You see a lake. Type "wait" to wait for a boat. Type "swim" to swim across. \n').lower()
+  
+    if choice2 == "wait":
+        choice3 = input("You are now on an island with 3 boxes. One red, one yellow and one blue. Which colour do you choose? \n").lower()
+    
+        if choice3 == "yellow":
+            print("You've found the treasure, you win!")
+    
+        else:
+            print("You've got eaten by a snake, game over!")
+    else:
+        print("You get attacked by an angry trout. Game Over.")
+
+else: 
+    print("You fell into a hole. Game Over.")
+</code></pre>
+                        <p>The "elif" statement could work too especially in Choice 3. Let's say there are different consequences for opening different color of boxes (blue: you get stung by bees, red: a black widow jumped out and bit you. Either way, they are both bad.). Then you could change the last few lines inside Choice 3 as such:</p>
+<pre><code>
+print("Welcome to Treasure Island.🏴‍☠️")
+print("Your mission is to find the treasure.")
+
+choice1 = input('Where do you want to go? Type "left" or "right" \n').lower()
+
+if choice1 == "left":
+    choice2 = input('You see a lake. Type "wait" to wait for a boat. Type "swim" to swim across. \n').lower()
+    
+    if choice2 == "wait":
+        choice3 = input("You are now on an island with 3 boxes. One red, one yellow and one blue. Which colour do you choose? \n").lower()
+    
+        if choice3 == "yellow":
+            print("You've found the treasure, you win!")
+    
+        elif choice3 == "red":
+            print("A black widow spider jumped out and bit you! Game over!")
+        
+        elif choice3 == "blue":
+            print("A bee stung you. Game Over.")
+        
+    else:
+        print("You get attacked by an angry trout. Game Over.")
+
+else: 
+    print("You fell into a hole. Game Over.")
+    </code></pre>
+<br>
+                        <p><b>Common Mistakes</b>
+                        <ul><li><b>Indentation: </b>this is a common mistake people often made. Be sure to use "tab" or "space" to indent your next line of code.  </li>
+                            <li><b>Confusion between when to use "if-else" and "elif":</b> Whenever in doubt, think about the decision you want Python to do: do you want Python to check all conditions and perform all tasks? Here is a table I have used numerous time to decide which statement to use. </b> </li>
+                            <table class="table table-sm">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">if / elif / else</th>
+                                    <th scope="col">If / else </th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+<td><pre><code>        
+if condition_1 == True:
+  perform action_a
+
+elif condition 2 == True:
+  perform action_b                                        
+
+else:
+  perform action_c
+</code></pre></td>                            
+<td><pre><code>        
+if condition_1 == True:
+  perform action_a
+    
+if condition_2 == True:
+  perform action_b
+
+if condition_3 == True:
+  perform action_c
+</code></pre>
+</td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>Only 1 condition needs to be met (check condition 1 and then condition 2). If condition 1 is met, it will not check into condition 2. </td>
+                                    <td>In this case, Python will check each condition, 1 by 1 and will perform the actions if the conditions are met.</td>
+                                    
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+                        </ul>
+                        
+                        
+                        <!-- <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span> -->
+                        
+                        <p>
+                            
+                            Background Photo by <a href="https://unsplash.com/@oorusakioo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Karen Zhang</a> on <a href="https://unsplash.com/photos/man-in-gray-shirt-and-black-pants-standing-on-brown-wooden-boat-hbLbIEn-fso?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  
+  
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                           <!-- INSTA -->
+                           <li class="list-inline-item">
+                            <a href="https://www.instagram.com/catbuchner?igsh=Z2lzcGN2d2J0MXBp">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <!-- LINKEDIN -->
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/lee-yee-yong-06929415/">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <!-- GITHUB -->
+                            <li class="list-inline-item">
+                                <a href="https://github.com/slimrivermoi">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2023</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
