@@ -122,52 +122,43 @@ else:
 <br>
                         <p><b>Common Mistakes</b>
                         <ul><li><b>Indentation: </b>this is a common mistake people often made. Be sure to use "tab" or "space" to indent your next line of code.  </li>
-                            <li><b>Confusion between when to use "if-else" and "elif":</b> Whenever in doubt, think about the decision you want Python to do: do you want Python to check all conditions and perform all tasks? Here is a table I have used numerous time to decide which statement to use. </b> </li>
-                            <table class="table table-sm">
-                                <thead>
-                                  <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">if / elif / else</th>
-                                    <th scope="col">If / else </th>
-                                    
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-<td><pre><code>        
+                            <li><b>Confusion between when to use "if-else" and "elif":</b> Whenever in doubt, think about the decision you want Python to do: do you want Python to check all conditions and perform all tasks? </li>
+                        </ul>       
+                        <br>Here is a simple illustration on how I would differentiate the two statements. 
+                        <br><br>
+                        <b>If-Else statement:</b> check <u>each</u> IF condition and perform the actions if conditions are met.
+<pre><code>        
 if condition_1 == True:
-  perform action_a
-
-elif condition 2 == True:
-  perform action_b                                        
-
-else:
-  perform action_c
-</code></pre></td>                            
-<td><pre><code>        
-if condition_1 == True:
-  perform action_a
+    perform action_a
     
 if condition_2 == True:
-  perform action_b
+    perform action_b
 
 if condition_3 == True:
-  perform action_c
-</code></pre>
-</td>
-                                    
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Only 1 condition needs to be met (check condition 1 and then condition 2). If condition 1 is met, it will not check into condition 2. </td>
-                                    <td>In this case, Python will check each condition, 1 by 1 and will perform the actions if the conditions are met.</td>
-                                    
-                                  </tr>
-                                  
-                                </tbody>
-                              </table>
-                        </ul>
+    perform action_c
+    </code></pre>
+
+<br>
+<p><b>If-Elif Statement: </b>only check condition 1 <u>first</u>. If condition 1 is met, it will neither check condition 2 nor 3. </p>
+<pre><code>        
+if condition_1 == True:
+    perform action_a
+
+elif condition 2 == True:
+    perform action_b 
+
+elif condition 3 == True:
+    perform action_c   
+
+else:
+    perform action_d
+    </code></pre>       
+                      <p>The final mistake I have made a lot is making my If-else logic too complicated (with too many nested If's, Elif, Else). If you find yourself feeling lost in your own If-logic, perhaps it is good to seat back, take a break and relook at the problem again.</p>  
+
+
+
+
+
                         
                         
                         <!-- <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span> -->
